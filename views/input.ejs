@@ -1,0 +1,167 @@
+<%- include("./partials/header") %>
+<div class = "container">
+	<div class = "row">
+		<div style="width: 60%; margin: 25px auto;">
+			<form action="/tripPlanner/input" method = "POST">
+			 <h3>Select the places you would like to visit and know the cheapest path</h3>
+			  <hr class="my-3">
+			  <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="Fraser Island">
+				  <label class="form-check-label" for="defaultCheck1">
+					Fraser Island
+				  </label>
+			  </div>
+			  <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" name="Blue Mountains National Park" >
+				  <label class="form-check-label" for="defaultCheck2">
+					Blue Mountains National Park
+				  </label>
+			   </div>  
+			   <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" name="Sea World Marine Park" >
+				  <label class="form-check-label" for="defaultCheck3">
+					Sea World Marine Park
+				  </label>
+			   </div>  
+			   <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck4" name="Carlton Gardens" >
+				  <label class="form-check-label" for="defaultCheck4">
+					Carlton Gardens
+				  </label>
+			   </div>  
+			   <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" name="Great Barrier Reef" >
+				  <label class="form-check-label" for="defaultCheck5">
+					Great Barrier Reef
+				  </label>
+			   </div>  
+			   <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="King Street" >
+				  <label class="form-check-label" for="defaultCheck6">
+					King Street
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="The Rocks" >
+				  <label class="form-check-label" for="defaultCheck6">
+					The Rocks
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Cradle Mountain" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Cradle Mountain
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Taronga Zoo" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Taronga Zoo
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Cable Beach" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Cable Beach
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Sun Pictures" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Sun Pictures
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Pearl Farm Tours" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Pearl Farm Tours
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Broome Historical Museum" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Broome Historical Museum
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Barossa Valley" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Barossa Valley
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Rottnest Island" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Rottnest Island
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Byron Bay" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Byron Bay
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Barangaroo Reserve" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Barangaroo Reserve
+				  </label>
+			   </div>  
+				<!-- <div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Hyde Park" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Hyde Park
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Royal Botanic Garden" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Royal Botanic Garden
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Daintree National Park" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Daintree National Park
+				  </label>
+			   </div>  
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" name="Bondi Beach" >
+				  <label class="form-check-label" for="defaultCheck6">
+					Bondi Beach
+				  </label>
+			   </div>   -->
+				<hr class="my-3">
+				<div class="form-group">
+					<label for="selectSource"><h3 class="mb-3">Choose a location from where you wish to start your journey(It must be one of the places you selected above) </h3></label>
+					<select multiple class="form-control" id="selectSource" name="source">
+					  <option>Fraser Island</option>
+					  <option>Blue Mountains National Park</option>
+					  <option>Sea World Marine Park</option>
+					  <option>Carlton Gardens</option>
+					  <option>Great Barrier Reef</option>
+					  <option>King Street</option>
+					  <option>The Rocks</option>
+					  <option>Cradle Mountain</option>
+					  <option>Taronga Zoo</option>
+					  <option>Cable Beach</option>
+					  <option>Sun Pictures</option>
+					  <option>Pearl Farm Tours</option>
+					  <option>Broome Historical Museum</option>
+					  <option>Barossa Valley</option>
+					  <option>Rottnest Island</option>
+					  <option>Byron Bay</option>
+					  <option>Barangaroo Reserve</option>
+					  <!-- <option>Hyde Park</option>
+					  <option>Royal Botanic Garden</option>
+					  <option>Daintree National Park</option>
+					  <option>Bondi Beach</option> -->
+					</select>
+				 </div>
+			  <button type="submit" class="btn btn-primary" style="margin:0px;">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("./partials/footer") %>

@@ -1,0 +1,30 @@
+<%- include("./partials/header") %>
+<img style="width:100%; height:550px;  background-size: cover; background-position: 50% 50%; "src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__340.jpg">
+<div class="d-flex justify-content-center my-4">
+			<h2>Welcome <span id="username"><%=currentUser.username%></span> to <span id="TP">Trip Planner</span></h2>
+	</div>
+<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-4 box" id="b1">
+				<i class="fa fa-plane" id="icon" aria-hidden="true"></i>
+				<a href="/tripPlanner/input" class="links">
+					<h2>Plan your trip</h2>
+				</a>
+			</div>
+			<div class="col-12 col-md-4 box" id="b2">
+				<i class="fa fa-history" id="icon" aria-hidden="true"></i>
+				<a href="/tripPlanner/history" class="links">
+					<h2>View Your Plan History</h2>
+				</a>
+			</div>
+			<div class="col-12 col-md-4 box" id="b3">
+				<i class="fa fa-eye" id="icon" aria-hidden="true"></i>
+				<a href="tripPlanner/show" class="links">
+					<h2>View all tourist places</h2>
+				</a>
+			</div>
+			<a href="/tripPlanner/viewgraph">View Graph</a>
+		</div>
+</div>
+
+<%- include("./partials/footer") %>

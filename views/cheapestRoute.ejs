@@ -1,0 +1,40 @@
+<%- include("./partials/header") %>
+<div style="width: 60%; margin: 25px auto;">
+	<h4>Cheapest Route starting from <em><%=src%></em> and covering the places 
+		<% for(var i=1; i<arr.length; i++){ %>
+			<span><em><%= touristPlaces[arr[i]] %></em></span>
+			<% if(i < arr.length -2){ %>
+				<span>,</span>
+			<% }else if(i == arr.length -2) {%>
+				<span>and</span>
+			<% } %>
+		<% } %>
+		is :</h4>
+	<hr class="my-4">
+	<table class="table">
+	  <thead class="thead-dark">
+		<tr>
+		  <th scope="col">#</th>
+		  <th scope="col">Path</th>
+		  <th scope="col">Cost of travel</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<% for(var i=0; i<arr.length-1; i++){ %>
+			<tr>
+			  <th scope="row"><%= i+1%></th>
+			  <td><%= touristPlaces[arr[i]]%> to <%= touristPlaces[arr[i+1]] %></td>
+			  <td><%= mat[arr[i]][arr[i+1]] %></td>
+			</tr>
+		<% } %>
+		<tr class="table-success mt-5">
+			<td>>>></td>
+			<td>Total cost of travel </td>
+			<td>$<%= minCost %></td>
+		</tr>
+	  </tbody>
+	</table>
+
+</div>
+
+<%- include("./partials/footer") %>

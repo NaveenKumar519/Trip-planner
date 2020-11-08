@@ -1,0 +1,56 @@
+<%- include("./partials/header") %>
+<div class="jumbotron mt-4">
+  <h1><i class="fa fa-history" aria-hidden="true"></i>HISTORY</h1>
+	<p class="lead">This section keeps track of the cheapest routes you have calculted on this website.Here,you can find
+	 all the trips you have planned so far</p>
+</div>
+<div style="width: 60%; margin: 25px auto;">
+	<% for(var j=0; j<arr.length; j++){ %>
+	<h4><%= j+1 %>.) Cheapest Route starting from <em><%=arr[j][0]%></em> and covering the places 
+			<% for(var i=1; i<arr[j].length; i++){ %>
+		<span><em><%= arr[j][i] %></em></span>
+				<% if(i < arr[j].length -2){ %>
+					<span>,</span>
+				<% }else if(i == arr[j].length -2) {%>
+					<span>and</span>
+				<% } %>
+			<% } %>
+			is :</h4>
+		<hr class="my-4">
+		<table class="table">
+		  <thead class="thead-dark">
+			<tr>
+			  <th scope="col">#</th>
+			  <th scope="col">Path</th>
+			  <th scope="col">Cost of travel</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<% for(var i=0; i<arr[j].length-1; i++){ %>
+				<tr>
+				  <th scope="row"><%= i+1%></th>
+				  <td><%= arr[j][i]%> to <%= arr[j][i+1] %></td>
+				  <td>  
+					  <% for(var k=0; k<g.adjacencyList.get(arr[j][i]).length; k++){ %>
+					  	<% if(g.adjacencyList.get(arr[j][i])[k].node == arr[j][i+1]) {%>
+					  		<%= g.adjacencyList.get(arr[j][i])[k].weight%>
+					  	<% } %>
+					  <% } %>
+				  </td>
+				</tr>
+			<% } %>
+			<tr class="table-success mt-4">
+				<td>>>></td>
+				<td>Total cost of travel </td>
+			    <td>$<%= minCosts[j] %></td>
+			</tr>
+		  </tbody>
+		</table>
+		<!-- <form action="/tripPlanner/history/delete?_method=DELETE" method="POST">
+			<button class="btn btn-danger">DELETE</button>
+		</form> -->
+		
+		<div style="margin-bottom: 30px;"></div>
+	<% } %>
+</div>
+<%- include("./partials/footer") %>

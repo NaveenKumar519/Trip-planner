@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+	<div class="container">
+		<div class="row" >
+			<div style="width: 70%; margin: 20px auto; border-radius: 20px; padding: 20px; border: 1px solid #888888">	
+					<% for(var i=0; i<all_places.length; i++){ %>
+					  <h3 class="mb-3 display-4"><%= all_places[i] %></h3>
+					   <table class="table">
+						  <thead class="thead-dark">
+							<tr>
+							  <th scope="col">Places To visit</th>
+							  <th scope="col">Cost Of travel</th>
+							</tr>
+						  </thead>
+						   <tbody>
+						  <% for(var k=0; k<g.adjacencyList.get(all_places[i]).length; k++){ %>
+							<tr>
+							  <th scope="row"><%=g.adjacencyList.get(all_places[i])[k].node %></th>
+							  <td><%=g.adjacencyList.get(all_places[i])[k].weight %></td>
+							</tr>
+						   <% } %>
+					      </tbody>
+					   </table>
+						<hr style="border-top:2px solid black;">
+				    <% } %>
+			</div>
+	    </div>	
+	</div>
+<%- include("./partials/footer") %>
